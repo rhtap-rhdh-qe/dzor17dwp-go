@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dzor17dwp-go-gitops
+  description: This is GitOps manifest for dzor17dwp-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=dzor17dwp-go
+    backstage.io/kubernetes-id: dzor17dwp-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: dzor17dwp-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:dzor17dwp-go
